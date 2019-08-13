@@ -12,7 +12,7 @@ Command line webOS remote for LGTVs. This tool uses a connection via websockets 
   * HU80KG.AEU (CineBeam 4K)
   * OLED55B7
   * SK8500PLA
-  *
+  * 49UK6300MLB
   * [please add more!]
 
 Tested with python 2.7.2 on windows and works fine, expect fiew things mentioned in Bugs.
