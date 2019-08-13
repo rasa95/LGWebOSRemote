@@ -12,17 +12,18 @@ Command line webOS remote for LGTVs. This tool uses a connection via websockets 
   * HU80KG.AEU (CineBeam 4K)
   * OLED55B7
   * SK8500PLA
+  *
   * [please add more!]
 
-Tested with python 2.7 on mac/linux and works fine, your mileage may vary with windows, patches welcome.
+Tested with python 2.7.2 on windows and works fine, expect fiew things mentioned in Bugs.
 
 ### Likely supports
 
-All devices with firmware major version 4, product name "webOSTV 2.0"
+All devices 
 
 ## Available Commands
     scan
-    auth                  Hostname/IP     Authenticate and exit, creates initial config ~/.lgtv.json
+    auth                  Hostname/IP     Authenticate and exit, creates initial config .lgtv.json
     audioStatus           
     audioVolume           
     closeApp              appid
@@ -40,18 +41,18 @@ All devices with firmware major version 4, product name "webOSTV 2.0"
     listChannels          
     listInputs            
     listServices          
-    mute                  muted
-    notification          message
+    mute                  {muted}
+    notification          {message}
     off                   
     on                    
-    openAppWithPayload    payload
-    openBrowserAt         url
-    openYoutubeId         videoid
-    openYoutubeURL        url
-    setInput              input_id
-    setTVChannel          channel
-    setVolume             level
-    startApp              appid
+    openAppWithPayload    {payload}
+    openBrowserAt         {url}
+    openYoutubeId         {videoid}
+    openYoutubeURL        {url}
+    setInput              {input_id}
+    setTVChannel          {channel}
+    setVolume             {level}
+    startApp              {appid}
     swInfo                
     volumeDown            
     volumeUp
@@ -59,10 +60,8 @@ All devices with firmware major version 4, product name "webOSTV 2.0"
 ## Install
 
 Requires wakeonlan, websocket for python and arp (in Debian/Ubuntu: apt-get install net-tools)
-
-    python -m venv lgtv-venv
-    source lgtv-venv/bin/activate
-    pip install git+https://github.com/klattimer/LGWebOSRemote
+    
+    pip install git+https://github.com/rasa95/LGWebOSRemote
 
 ## Example usage
     # Scan/Authenticate
@@ -71,14 +70,14 @@ Requires wakeonlan, websocket for python and arp (in Debian/Ubuntu: apt-get inst
         "count": 1, 
         "list": [
             {
-                "address": "192.168.1.31", 
+                "address": "192.168.1.231", 
                 "model": "UF830V", 
                 "uuid": "10f34f86-0664-f223-4b8f-d16a772d9baf"
             }
         ], 
         "result": "ok"
     }
-    $ lgtv auth 192.168.1.31
+    $ lgtv auth 192.168.1.231
     
     $ lgtv on
     $ lgtv off
@@ -95,5 +94,5 @@ You need to auth with the TV before being able to use the on command as it requi
 
 ## Bugs
 
-I couldn't test youtube because it seems the app isn't installed and not available to download right now
-maybe they're updating it?
+Scan is not working  
+Auth is only working with predefined parameters
