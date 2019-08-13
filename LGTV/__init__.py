@@ -201,8 +201,9 @@ class LGTVClient(WebSocketClient):
     def __init__(self, hostname=None):
         self.__command_count = 0
         self.__waiting_callback = None
-        if os.path.exists(os.path.expanduser("~/.lgtv.json")):
-            f = open(os.path.expanduser("~/.lgtv.json"))
+        dirpath = os.getcwd()
+        if os.path.exists(dirpath+".lgtv.json"):
+            f = open(dirpath+".lgtv.json")
             settings = json.loads(f.read())
             f.close()
             self.__hostname = settings['hostname']
@@ -247,7 +248,7 @@ class LGTVClient(WebSocketClient):
             "ip": self.__ip,
             "hostname": self.__hostname
         }
-        f = open(os.path.expanduser("~/.lgtv.json"), "w")
+        f = open(dirpath+".lgtv.json", "w")
         f.write(json.dumps(data))
         f.close()
 
