@@ -9,13 +9,13 @@ from LGTV import LGTVScan, LGTVClient, getCommands
 def usage(error=None):
     if error:
         print ("Error: " + error)
-    print ("LGTV Controller")
-    print ("Author: Karl Lattimer <karl@qdh.org.uk>")
+    print ("Gizmo LGWeb Controller")
+    print ("Author: Playground.rs")
     print ("Usage: lgtv <command> [parameter]\n")
     print ("Available Commands:")
 
     print ("  scan")
-    print ("  auth                  Hostname/IP    Authenticate and exit, creates initial config ~/.lgtv.json")
+    print ("  auth                  Hostname/IP    Authenticate and exit, creates initial config .lgtv.json")
 
     for c in getCommands(LGTVClient):
         print ("  " + c, end=" ")
@@ -75,8 +75,8 @@ def main():
         if len(sys.argv) < 3:
             usage("Hostname or IP is required for auth")
         
-        if os.path.exists(os.path.expanduser("~/.lgtv.json")):
-            os.remove(os.path.expanduser("~/.lgtv.json"))
+        if os.path.exists(dirpath+".lgtv.json"):
+            os.remove(dirpath+".lgtv.json")
             
         ws = LGTVClient(sys.argv[2])
         ws.connect()
