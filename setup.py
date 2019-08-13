@@ -10,9 +10,9 @@ import codecs
 from setuptools import setup
 
 
-LGTV_VERSION = '0.1.2'
+LGTV_VERSION = '1.1.0'
 LGTV_DOWNLOAD_URL = (
-    'https://github.com/klattimer/LGWebOSRemote/tarball/' + LGTV_VERSION
+    'https://github.com/rasa95/LGWebOSRemote/tarball/' + LGTV_VERSION
 )
 
 
@@ -30,9 +30,9 @@ setup(
     description='LG WebOS TV Controller.',
     long_description=read_file('README.md'),
     license='MIT',
-    author='Karl Lattimer',
-    author_email='karl@qdh.org.uk',
-    url='https://github.com/klattimer/LGWebOSRemote',
+    author='Playground',
+    author_email='office@playground.rs',
+    url='https://github.com/rasa95/LGWebOSRemote',
     download_url=LGTV_DOWNLOAD_URL,
     keywords=[
         'smarthome', 'smarttv', 'lg', 'tv', 'webos', 'remote'
